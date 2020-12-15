@@ -1,7 +1,7 @@
-test.vcd: test.v multiply.v fulladd.v bitadd.v leftmove.v
-	iverilog -o wave -y ./ test.v
-	vvp -n wave -lxt2
-	rm -f wave
+main.vcd: main.v mul1.v mul2.v fulladd.v bitadd.v leftmove.v
+	iverilog -o main -y ./ main.v
+	vvp -n main -lxt2
+	rm -f main
 
-wave:test.vcd
-	gtkwave test.vcd
+wave:main.vcd
+	gtkwave main.vcd

@@ -1,4 +1,4 @@
-module mul1 (F, X1, X2);
+module multiply (F, X1, X2);
 	input [31:0] X1, X2;
 	output [31:0] F;
 	
@@ -17,7 +17,7 @@ module mul1 (F, X1, X2);
 				temp[j - 1] = X1[j - 1] & X2[i - 1];
 			end
 			result = result + temp;
-			result = result << 1;
+			if (i != 1) result = result << 1;
 		end
 		F = result;
 	end
